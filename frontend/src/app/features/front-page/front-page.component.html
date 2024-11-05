@@ -1,1 +1,8 @@
-<p>front-page works!</p>
+<div class="container">
+    <div class="cards">
+        <div class="card" *ngFor="let book of books">
+            <p>{{book.bookTitle}}</p>
+            <app-card></app-card>
+        </div>
+    </div>
+</div>

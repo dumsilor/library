@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CardComponent } from '../../shared/components/card/card.component';
+import { CommonModule } from '@angular/common';
+import { FrontPageService } from './front-page.service';
+import { Books } from '../../shared/models/book.model';
 
 @Component({
   selector: 'app-front-page',
   standalone: true,
-  imports: [],
+  imports: [CardComponent,CommonModule],
   templateUrl: './front-page.component.html',
   styleUrl: './front-page.component.scss'
 })
-export class FrontPageComponent {
+export class FrontPageComponent implements OnInit {
+  books: Books[]  = [];
 
+  constructor(private frontPageService: FrontPageService) {}
+
+  ngOnInit(): void {
+    this.books = this.frontPageService.getBooks;
+  }
 }

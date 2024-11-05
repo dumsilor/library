@@ -19,7 +19,7 @@ app.get("/ip",(req,res)=>{
 
 app.get("/api/books",(_req,res)=>{
     res.send(sample_books)
-})1
+})
 
 // app.post("/api/books/:id",(req,res){
 //     const body = req.body['id']
