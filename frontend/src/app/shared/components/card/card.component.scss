@@ -1,0 +1,23 @@
+@import "../../scss/_colors";
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2rem;
+    color: $text-color;
+}
+
+img {
+    height: 300px;
+    width: 200px;
+    border-radius: 0.7rem;
+}
+
+h3 {
+    margin: 0.3rem 0 0.5rem 0;
+}
+
+p {
+    margin: 0;
+}
