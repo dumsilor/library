@@ -4,7 +4,9 @@
     </div>
     <div class="cards">
         <div class="card" *ngFor="let book of books">
-            <app-card [book]="book"></app-card>
+            <a href="#">
+                <app-card [book]="book"></app-card>
+            </a>
         </div>
     </div>
 </div>
