@@ -1,1 +1,30 @@
-<p>book works!</p>
+<div class="container">
+    <div class="pdf-control-container">
+        <div class="page-select">
+            <label for="pageNum">Page</label>
+            <input type="text" name="pageNum" id="pageNum" [(ngModel)]="pageVariable"><span>/{{totalPage}}</span>
+        </div>
+        <div class="button-nav">
+        </div>
+    </div>
+    <div class="pdf-container">
+        <pdf-viewer
+    [src]="pdfSrc"
+    [rotation]="0"
+    [original-size]="false"
+    [zoom]="1"
+    [zoom-scale]="'page-width'"
+    [stick-to-page]="true"
+    [render-text]="true"
+    [render-text-mode]="2"
+    [external-link-target]="'blank'"
+    [autoresize]="true"
+    [show-borders]="false"
+    style="width: 100%; height: 100vh;"
+    [(page)]="pageVariable"
+    (after-load-complete)="afterLoadComplete($event)"
+    ></pdf-viewer>
+    </div>
+</div>
+
+

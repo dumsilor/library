@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FrontPageService } from './front-page.service';
 import { Books } from '../../shared/models/book.model';
 import { TitleComponent } from "../../shared/components/partials/title/title.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-front-page',
@@ -15,9 +16,13 @@ import { TitleComponent } from "../../shared/components/partials/title/title.com
 export class FrontPageComponent implements OnInit {
   books: Books[]  = [];
 
-  constructor(private frontPageService: FrontPageService) {}
+  constructor(private frontPageService: FrontPageService, private router: Router) {}
 
   ngOnInit(): void {
     this.books = this.frontPageService.getBooks;
+  }
+
+  onBookClicked(bookId: string) {
+    this.router.navigate(["/"+bookId])
   }
 }
