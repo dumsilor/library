@@ -1,28 +1,27 @@
 {
-    "compilerOptions": {
-      "target": "ES2020", // Targeting modern JavaScript version
-      "module": "commonjs", // CommonJS for Node.js projects; use "ESNext" for front-end projects
-      "lib": ["ES2020", "DOM"], // Standard libraries
-      "allowJs": true, // Allow JavaScript files to be compiled
-      "checkJs": false, // Disable type checking for JavaScript files
-      "strict": true, // Enable all strict type-checking options
-      "esModuleInterop": true, // Enable compatibility with CommonJS modules
-      "skipLibCheck": true, // Skip type checking of declaration files
-      "forceConsistentCasingInFileNames": true, // Ensure consistent casing in file names
-      "outDir": "./dist", // Output directory for compiled files
-      "rootDir": "./src", // Root directory of the input files
-      "resolveJsonModule": true, // Allow importing JSON files
-      "moduleResolution": "node", // Module resolution strategy
-      "isolatedModules": true, // Perform additional checks to ensure files can be transpiled separately
-      "noImplicitAny": true, // Raise error on expressions and declarations with an implied "any" type
-      "noUnusedLocals": true, // Report errors on unused locals
-      "noUnusedParameters": true, // Report errors on unused parameters
-      "noImplicitReturns": true, // Report error when not all code paths in function return a value
-      "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
-      "types": ["node"], // Include type definitions for Node.js
-      "typeRoots": ["./node_modules/@types"] // Specify type declaration file directories
-    },
-    "include": ["src"], // Include source files
-    "exclude": ["node_modules", "dist"] // Exclude unnecessary files and directories
-  }
-  
+  "compilerOptions": {
+    "target": "ES2020", // Targeting modern JavaScript version
+    "module": "commonjs", // CommonJS for Node.js projects; use "ESNext" for front-end projects
+    "lib": ["ES2020", "DOM"], // Standard libraries
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "checkJs": false, // Disable type checking for JavaScript files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Enable compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in file names
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory of the input files
+    "resolveJsonModule": true, // Allow importing JSON files
+    "moduleResolution": "node", // Module resolution strategy
+    "isolatedModules": true, // Perform additional checks to ensure files can be transpiled separately
+    "noImplicitAny": true, // Raise error on expressions and declarations with an implied "any" type
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
+    "types": ["node"], // Include type definitions for Node.js
+    "typeRoots": ["./node_modules/@types"] // Specify type declaration file directories
+  },
+  "include": ["src"], // Include source files
+  "exclude": ["node_modules", "dist"] // Exclude unnecessary files and directories
+}

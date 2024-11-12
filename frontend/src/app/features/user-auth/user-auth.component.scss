@@ -1,0 +1,118 @@
+$font-size: 1.2rem;
+$font-family: "Roboto Mono",
+monospace;
+$transition-property: all;
+$transition-duration: 0.2s;
+$transition-timing-function: ease-in-out;
+$form-elements-margin-top: 2rem;
+$font-weight: 600;
+$input-font-size: 1.2rem;
+$display-layout: flex;
+$flex-direction: column;
+$text-color: rgba(0, 0, 0, 0.7);
+$on-focus-text-color: rgba(0, 0, 0, 1);
+$justify-content: center;
+$align-items: center;
+$height: 100vh;
+$flex-wrap: wrap;
+$bottom-border: 1px solid rgba(0, 0, 0, 0.3);
+$bottom-border-focus: 2px solid rgba(0, 0, 0, 1);
+$on-focus-transform: scale(1.01);
+$on-focus-input-font-size: 1.3rem;
+$bg-color: rgba(107, 10, 24, 1);
+$btn-text-color: rgba(255, 255, 255, 1);
+$btn-clicked-color: rgba(0, 255, 0, 1);
+$button-border: none;
+$symmetric-padding: 2rem;
+$top-bottom-padding: 1rem;
+$left-right-padding: 3rem;
+$border-radius: 1rem;
+$opacity-main: 0.5;
+$opacity-hover: 1;
+
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.form-control {
+    font-family: $font-family;
+    font-optical-sizing: auto;
+    font-weight: $font-weight;
+    font-style: normal;
+    display: $display-layout;
+    flex-direction: $flex-direction;
+    color: $text-color;
+    font-size: $font-size;
+
+    > :not(:first-child) {
+        margin-top: $form-elements-margin-top;
+    }
+
+
+    input {
+        border: none;
+        border-bottom: $bottom-border;
+        padding: 0.25rem 0.5rem;
+        font-size: $input-font-size;
+        transition: $transition-property $transition-duration $transition-timing-function;
+
+        &:focus {
+            outline: none;
+            border-bottom: $bottom-border-focus;
+            transform: $on-focus-transform;
+            font-size: $on-focus-input-font-size;
+            color: $on-focus-text-color;
+        }
+    }
+}
+
+button {
+    background-color: $bg-color;
+    color: $btn-text-color;
+    border: $button-border;
+    padding: $top-bottom-padding $left-right-padding;
+    border-radius: $border-radius;
+    opacity: $opacity-main;
+    transition: $transition-property $transition-duration $transition-timing-function;
+    font-family: $font-family;
+    font-size: $font-size;
+
+    &:hover {
+        opacity: $opacity-hover;
+        cursor: pointer;
+    }
+
+    &:active {
+        background-color: $btn-clicked-color;
+    }
+}
+
+.redirect {
+    font-family: $font-family;
+    font-size: $font-size;
+    color: $text-color;
+}
+
+.login-msg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 5rem;
+    border-radius: 7px;
+    color: white;
+    font-size: $font-size;
+    transition: $transition-property $transition-duration ease-in-out;
+    opacity: 1;
+
+    &.hide {
+        opacity: 0;
+        transition: $transition-property $transition-duration ease-in-out;
+    }
+}

@@ -12,4 +12,5 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 export class CardComponent {
 @Input() book!: Books;
 
+
 }

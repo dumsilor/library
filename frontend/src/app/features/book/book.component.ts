@@ -10,26 +10,29 @@ import { Books } from '../../shared/models/book.model';
   standalone: true,
   imports: [PdfViewerModule, FormsModule],
   templateUrl: './book.component.html',
-  styleUrl: './book.component.scss'
+  styleUrl: './book.component.scss',
 })
 export class BookComponent implements OnInit {
   pdfSrc?: string;
-  pageVariable!: number;
+  pageVariable: number = 1;
   totalPage!: number;
   bookId!: string;
   selectedBook?: Books;
 
-  constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private bookService: BookService
+  ) {}
 
   ngOnInit(): void {
-    this.bookId = this.activatedRoute.snapshot.params["id"];
-    this.selectedBook = this.bookService.getBookById(this.bookId)
-    this.pdfSrc = 'assets/pdfs/test-book-1.pdf';
-    console.log(this.activatedRoute.snapshot)
-
+    this.bookId = this.activatedRoute.snapshot.params['id'];
+    this.selectedBook = this.bookService.getBookById(this.bookId);
+    this.pdfSrc = this.selectedBook?.pdfURL;
+    // console.log(this.activatedRoute.snapshot)
   }
 
   afterLoadComplete(pdf: PDFDocumentProxy) {
+    console.log('PDF loaded: ', pdf);
     this.totalPage = pdf.numPages;
   }
 }

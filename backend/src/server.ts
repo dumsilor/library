@@ -17,7 +17,7 @@ app.get("/ip",(req,res)=>{
     res.send(`You are visiting from ${req.socket.remoteAddress}`)
 })
 
-app.get("/api/books",(_req,res)=>{
+app.get("/api/books",(req,res)=>{
     res.send(sample_books)
 })
 
